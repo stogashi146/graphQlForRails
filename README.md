@@ -1,24 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
 
-Things you may want to cover:
+Rails で GraphQL を使用してみた
 
-* Ruby version
+参考サイト
+https://zenn.dev/igaiga/books/rails-practice-note/viewer/rails_graphql_workshop#gemfile
 
-* System dependencies
+## クエリ実行方法
 
-* Configuration
+1. サーバー起動する
+   `rails s`
 
-* Database creation
+2. graphiql にアクセスする
+   http://localhost:3000/graphiql
 
-* Database initialization
+3. 画面でクエリを入力して実行する
 
-* How to run the test suite
+- ID 指定で User を取得
 
-* Services (job queues, cache servers, search engines, etc.)
+```graphql
+{
+  user(id: "1") {
+    id
+    name
+    email
+  }
+}
+```
 
-* Deployment instructions
+- User をすべて取得する
 
-* ...
+```graphql
+{
+  users {
+    id
+    name
+    email
+  }
+}
+```
